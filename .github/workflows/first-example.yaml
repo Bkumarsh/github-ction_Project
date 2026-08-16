@@ -6,6 +6,9 @@ jobs:
     firt_job:
         runs-on: ubuntu-latest
         steps:
+        -   name: git check-out
+            uses: actions/checkout@v7
+            
         -   name: welcome message
             run: echo "Welcome to my CI-CD world"
 
