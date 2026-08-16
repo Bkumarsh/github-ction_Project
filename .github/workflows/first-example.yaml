@@ -1,0 +1,16 @@
+name: my first github action workflows
+
+on: push
+
+jobs:
+    firt_job:
+        runs-on: self-hosted
+        steps:
+        -   name: welcome message
+            run: echo "Welcome to my CI-CD world"
+
+        -   name: list of file
+            run: ls
+
+        -   name: read file
+            run: car README.md
