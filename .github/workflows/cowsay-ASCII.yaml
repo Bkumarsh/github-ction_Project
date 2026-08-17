@@ -8,10 +8,12 @@ jobs:
         steps:
         -   name: git check-out
             uses: actions/checkout@v7
+
+        -   name: list of file
+            run: |
+                ls -lrt
             
         -   name: install ASCII
             run: |
-                sudo apt update && sudo apt install cowsay -y
-                cowsay -f elephant "I am a, elephant" >> elephant.txt
-                cat elephant.txt
-                ls -ltr
+                chmod 777 cowsay-script.sh
+                ./cowsay-script.sh
