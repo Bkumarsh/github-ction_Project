@@ -1,0 +1,17 @@
+name: my first github action workflows
+
+on: push
+
+jobs:
+    firt_job:
+        runs-on: ubuntu-latest
+        steps:
+        -   name: git check-out
+            uses: actions/checkout@v7
+            
+        -   name: install ASCII
+            run: |
+                sudo apt update && sudo apt install cowsay -y
+                cowsay -f elephant "I am a, elephant" >> elephant.txt
+                cat elephant.txt
+                ls -ltr
